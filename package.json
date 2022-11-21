@@ -8,7 +8,8 @@
         "lint": "eslint .",
         "test": "jest --watchAll --coverage",
         "test:prod": "jest --watchAll --coverage --watchAll=false",
-        "start": "tsc --watch"
+        "start": "tsc --watch",
+        "build  ": "tsc"
     },
     "keywords": [],
     "author": "Cristian Martí",
