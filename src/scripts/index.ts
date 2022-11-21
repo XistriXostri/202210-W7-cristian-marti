@@ -1,2 +1,1 @@
-import { app } from './app.js';
-app();
+import { personajes } from './modules/Personajes.js';
