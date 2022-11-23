@@ -61,9 +61,6 @@ export class Personaje {
             }
         }
 
-        console.log(this.name, 'Boton Muere funciona');
         this.isAlive = false;
     }
 }
-
-//temporal

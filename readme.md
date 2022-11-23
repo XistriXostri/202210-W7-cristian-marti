@@ -1,37 +1,41 @@
-# Week 2 - Weekend Challenge
+# Week 3 - Challenge 1
 
-## Conway Game of Life 🦠 !
+# GoT DOM
 
-Deberás de programar el [Juego de la vida de Conway](https://es.wikipedia.org/wiki/Juego_de_la_vida).
+Tendrás que programar un interfaz de usuario para que refleje el siguiente modelo de datos.
 
-![Game of life demo](https://www.jakubkonka.com/images/gof.gif)
+En Juego de Tronos existen personajes. Todos esos personajes tienen la siguiente información: · Nombre · Familia a la que pertenece · Edad · Estado (vivo o muerto, aunque inicialmente todos están vivos)
 
-Un resumen de las reglas:
+Todos los personajes pueden realizar la acción de comunicar, pero cada tipo de personaje (no cada personaje) se comunica de un modo distinto. Nota: este método devuelve el string con la frase, no imprime por consola.
 
--  Una célula viva sigue las siguientes reglas:
-   -  Si tiene menos de 2 células contiguas vivas, muere por "soledad".
-   -  Si tiene más de 3 células contiguas vivas, muere por "sobrepoblación".
-   -  Si tiene 2 o 3 células contiguas vivas, sobrevive.
--  Una célula muerta sigue la siguiente regla: Permanece muerta hasta que tiene exactamente 3 células contiguas vivas, momento en el que "nace".
+Todos los personajes pueden realizar la acción de morir, cambiándose su estado a muerto.
 
-Si quieres probar como funciona para hacerte una idea, puedes probar una versión funcional en [esta página](https://playgameoflife.com/).
+Todos los personajes pertenecen a la misma serie, "Juego de Tronos".
 
-## Requisitos
+Cada uno de esos personajes puede ser un rey, un luchador, un asesor, o un escudero.
 
-1. Debe de estar testeado con Jest.
-2. Debe utilizarse SonarCloud para ir comprobando la calidad del código.
-3. Se utilizará Husky para manejar los git-hooks, utilizando los archivos adjuntos.
-4. Debe utilizarse GitActions el workflow adjunto.
-5. Debe protegerse main en GitHub para que todo lo que se mergee pase por pull-request y que el workflow se cumpla.
-6. En el caso de llegar a HTML/CSS.
-   4.1. Se utilizará BEM/SASS.
-   4.2. Se debe desplegar a Netlify.
+Un rey, además de la información que tiene por ser personaje, tiene la siguiente información: · Años de reinado · Cuando se comunica dice: "Vais a morir todos"
 
-## Milestones
+Un luchador, además de la información que tiene por ser personaje, tiene la siguiente información: · Arma que usa · Destreza (un valor entre 0 y 10) · Cuando se comunica dice: "Primero pego y luego pregunto"
 
-1. Programa funcional en JS. Las células se quedan pegadas la pared.
-2. Programa 100% testeado.
-3. Añadir HTML/CSS.
-4. Modificar JS para que:
-   a. Las células sigan avanzando al llegar a la pared y desaparezcan.
-   b. Las células salgan por un lado de la cuadrícula y aparezcan por el otro.
+Un asesor, además de la información que tiene por ser personaje, tiene la siguiente información: · Personaje al que asesora (que puede ser rey, luchador, asesor o escudero) · Cuando se comunica dice: "No sé por qué, pero creo que voy a morir pronto"
+
+Un escudero, además de la información que tiene por ser personaje, tiene la siguiente información: · Personaje al que sirve (que sólo puede ser luchador) · Grado de pelotismo (un valor entre 0 y 10) · Cuando se comunica dice: "Soy un loser"
+
+0. Crea los siguientes archivos JS y haz que funcionen como módulos mediante import y export:
+
+-  Personaje.js, Rey.js, Luchador.js, Asesor.js, Escudero.js (mete dentro cada clase)
+-  personajes.js (crea dentro un array con los personajes
+   -  Joffrey Baratheon (rey),
+   -  Jaime Lannister (luchador),
+   -  Daenerys Targaryen (luchadora),
+   -  Tyrion Lannister (asesor de Daenerys) y
+   -  Bronn (escudero de Jaime).)
+-  index.js (aquí va todo el resto del enunciado, y éste será el punto de entrada)
+
+1. Haz que por cada personaje del array se muestre la ficha correspondiente en el navegador:
+   -  En el elemento con clase `emoji` tiene que aparecer uno de estos emojis dependiendo del tipo de personaje: 👑 🗡 🎓 🛡
+   -  Si el personaje está muerto, su foto debe aparecer cabeza abajo (haz el CSS necesario);
+   -  En la lista con clase `metadata`, haz que sólo aparezcan los `li` correspondientes al personaje.
+2. Cuando el usuario haga clic en el botón "muere", tiene que cambiar el estado del personaje, y la interfaz debe reflejar el cambio.
+3. Cuando el usuario haga clic en el botón "habla", el elemento con clase `comunicaciones` debe aparecer con el texto y la imagen correspondientes. Haz que este elemento `comunicaciones` tenga la clase `on` durante 2 segundos y luego se le quite.

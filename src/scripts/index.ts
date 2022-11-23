@@ -97,13 +97,3 @@ const displayCharacter = (character: Rey | Asesor | Luchador | Escudero) => {
 };
 
 personajes.forEach((character) => displayCharacter(character));
-
-//old one
-// (() => {
-//     document.addEventListener('DOMContentLoaded', () => {
-//         const li = document.querySelector('li') as HTMLLIElement;
-//         li.outerHTML = ulTemplate;
-//     });
-// })();
-
-//comprobar herencias
