@@ -96,3 +96,12 @@ body {
     right: 5px;
     top: 5px;
 }
+
+.fa-thumbs-up {
+    color: green;
+}
+
+.fa-thumbs-down {
+    color: red;
+    display: none;
+}

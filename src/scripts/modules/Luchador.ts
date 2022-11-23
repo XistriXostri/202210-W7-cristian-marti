@@ -3,6 +3,7 @@ import { Personaje } from './Personaje.js';
 export class Luchador extends Personaje {
     public weapon: string;
     public skill: number;
+    public message = 'Primero pego y luego pregunto';
     constructor(
         name: string,
         family: string,
@@ -13,8 +14,5 @@ export class Luchador extends Personaje {
         super(name, family, age);
         this.weapon = weapon;
         this.skill = skill;
-    }
-    comunicar(): string {
-        return 'Primero pego y luego pregunto';
     }
 }

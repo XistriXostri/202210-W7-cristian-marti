@@ -2,6 +2,7 @@ import { Personaje } from './Personaje.js';
 
 export class Rey extends Personaje {
     public regnalYears: number;
+    public message = 'Vais a morir todos';
     constructor(
         name: string,
         family: string,
@@ -10,8 +11,5 @@ export class Rey extends Personaje {
     ) {
         super(name, family, age);
         this.regnalYears = regnalYears;
-    }
-    comunicar(): string {
-        return 'Vais a morir todos';
     }
 }
